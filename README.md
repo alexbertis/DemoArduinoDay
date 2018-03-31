@@ -1,4 +1,5 @@
-# DemoArduinoDay
+# Demo Arduino Day Zaragoza 2018
+#### Por Alejandro Bertinelli
 
 En este repositorio se incluyen todos los archivos necesarios para reproducir el ejemplo mostrado en el Arduino Day Zaragoza 2018.
 Se divide en 5 carpetas esenciales:
