@@ -1,0 +1,18 @@
+{
+  "comedor" : {
+    "lampara" : 0,
+    "persiana" : 0
+  },
+  "entrada" : {
+    "lampara" : 0,
+    "puerta" : false
+  },
+  "micuarto" : {
+    "flexo" : 0,
+    "lampara" : 0,
+    "persiana" : 0
+  },
+  "pasillo" : {
+    "lampara" : 0
+  }
+}
