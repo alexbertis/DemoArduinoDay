@@ -3,7 +3,7 @@
 
 1. Crear un agente de DialogFlow.
 1. Ir a *Ajustes* > *Export and Import* > *Import from ZIP*.
-1. Seleccionar el archivo ZIP de este directorio y pulsar *Import*.
+1. Seleccionar el archivo ZIP de este directorio ("arduino-day-zgz.zip") y pulsar *Import*.
 1. Esperar a que se configure todo.
 1. Se puede cambiar el nombre del agente desde *Ajustes*.
 1. Es necesario vincular un Webhook para que el agente invoque una función que le devuelva un resultado. Para ello, debemos ir al apartado *Fullfillment* y desde allí habilitar Webhook si no está activado.
