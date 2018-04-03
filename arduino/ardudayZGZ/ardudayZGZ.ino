@@ -6,7 +6,7 @@
 #define P_SALON 7
 #define P_MIHAB 8
 
-String jsonOld = "", jsonNew = "";
+String jsonNew = "";
 /*  0 LUZ SALON
  *  1 LUZ HALL
  *  2 LUZ MICUARTO
@@ -16,6 +16,9 @@ String jsonOld = "", jsonNew = "";
  *  6 PERS MICUARTO
  */
 int vals[7] = {0,0,0,0,0,0,0};
+int indexini = 0;
+int indexfin = 0;
+int i = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -30,17 +33,20 @@ void loop() {
     selector(jsonNew);
     darLEDs();
     delay(200);
-    jsonOld = jsonNew;
   }
 }
 void selector(String str){
-  vals[0] = str.substring(str.indexOf("lampara") + 10, str.indexOf("lampara") + 13).toInt();
-  vals[1] = str.substring(str.indexOf("lampara", 40) + 10, str.indexOf("lampara", 40) + 13).toInt();
-  vals[2] = str.substring(str.indexOf("lampara", 75) + 10, str.indexOf("lampara", 75) + 13).toInt();
-  vals[3] = str.substring(str.indexOf("lampara", 125) + 10, str.indexOf("lampara", 125) + 13).toInt();
-  vals[4] = str.substring(str.indexOf("flexo") + 8, str.indexOf("flexo") + 11).toInt();
-  vals[5] = str.substring(str.indexOf("persiana") + 11, str.indexOf("persiana") + 14).toInt();
-  vals[6] = str.substring(str.indexOf("persiana", 85) + 11, str.indexOf("persiana", 85) + 14).toInt();
+  indexini = 0;
+  indexfin = 0;
+  while (indexfin != -1){
+    indexfin = str.indexOf(",", indexini);
+    if (indexfin != -1)
+      vals[i] = str.substring(indexini, indexfin).toInt();
+    else
+      vals[i] = str.substring(indexini).toInt();
+    indexini = indexfin + 1;
+    i++;
+  }
 }
 
 void darLEDs(){
@@ -67,4 +73,3 @@ void transicionLED(int pin, int vInicial, int vFinal){
     }
   }
 }
-
