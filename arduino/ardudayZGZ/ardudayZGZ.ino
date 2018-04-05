@@ -18,7 +18,6 @@ String jsonNew = "";
 int vals[7] = {0,0,0,0,0,0,0};
 int indexini = 0;
 int indexfin = 0;
-int i = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -36,6 +35,7 @@ void loop() {
   }
 }
 void selector(String str){
+  int i = 0;
   indexini = 0;
   indexfin = 0;
   while (indexfin != -1){
